@@ -8,7 +8,7 @@ const Constraint = Matter.Constraint;
 var world,engine,ground,ground1,block1,block2,block3,block4,block5,block6,block7,block8,block9,block10,block11,block12;
 var block13,block14,block15,block16,block17,block18;
 var block19,block20,block21,block22,block23,block24,block25;
-var polygon,slingShot;
+var polygon,slingShot,base;
 
 function preload()
 {
@@ -22,7 +22,8 @@ function setup() {
 	engine = Engine.create();
 	world = engine.world;
 
-	//Create the Bodies Here.
+  //Create the Bodies Here.
+  base=new Ground(650,500,1300,5)
 	ground=new Ground(600,450,300,10);
 	ground1=new Ground(1100,300,250,10)
 
@@ -75,6 +76,7 @@ function setup() {
 function draw() {
   rectMode(CENTER);
   background(56,44,44);
+  base.display();
   ground.display();
   ground1.display();
 
@@ -111,6 +113,8 @@ function draw() {
   fill(136,204,234);
   block25.display();
 
+  slingShot.display();
+  
   polygon.display();
 
 
